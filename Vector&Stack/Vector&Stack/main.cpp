@@ -1,18 +1,6 @@
 #include "D:\Vector+Stack\Vector&Stack\Domain\Vector.cpp" // Подключение интерфейса для взаимодействия с вектором
 #include <iostream> // Для стандартных потоков ввода/вывода
 
-void handleInvalidInput(std::istream& input, std::ostream& output);
-
-void runVectorInterface(std::istream& input, std::ostream& output);
-
-int main() {
-    setlocale(LC_ALL, "Russian");
-    // Запуск пользовательского интерфейса с использованием стандартных потоков
-    runVectorInterface(std::cin, std::cout);
-
-    return 0; // Завершение программы
-}
-
 void handleInvalidInput(std::istream& input, std::ostream& output) {
     if (input.fail()) {
         input.clear(); // Сбрасываем флаг ошибки
@@ -20,6 +8,7 @@ void handleInvalidInput(std::istream& input, std::ostream& output) {
         output << "Ошибка: введено некорректное значение. Попробуйте снова.\n";
     }
 }
+
 void runVectorInterface(std::istream& input, std::ostream& output) {
     Vector vec; // Создаем объект вектора
     bool exit = false; // Флаг завершения работы
@@ -142,4 +131,12 @@ void runVectorInterface(std::istream& input, std::ostream& output) {
         }
         }
     }
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    // Запуск пользовательского интерфейса с использованием стандартных потоков
+    runVectorInterface(std::cin, std::cout);
+
+    return 0; // Завершение программы
 }
